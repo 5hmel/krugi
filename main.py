@@ -1,15 +1,15 @@
 import sys
 from random import randint
-
+from scnd import Ui_MainWindow
 from PyQt5 import uic
 from PyQt5.QtGui import QPainter, QColor
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
 
-class MyWidget(QMainWindow):
+class MyWidget(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('asd.ui', self)
+        self.setupUi(self)
         self.pushButton.clicked.connect(self.run)
         self.share = 0
         self.do_paint = False
